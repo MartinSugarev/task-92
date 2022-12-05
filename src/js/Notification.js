@@ -23,8 +23,9 @@ export default class Notification {
   }
 
   render({type, price}) {
+   
     const template = `
-<div class="${classNames('notification', `type-${type}`)}">
+<div class="${classNames('notification', `type-${type}`, {'is-danger': type === 'hawaiian' ? true : false})}">
   <button class="delete">Close</button>
   🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
