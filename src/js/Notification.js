@@ -19,7 +19,7 @@ export default class Notification {
   }
 
   empty(){
-    document.querySelector('#notifications').innerHTML = ''
+    this.notification.innerHTML = ''
   }
 
   render({type, price}) {
@@ -35,7 +35,7 @@ export default class Notification {
     this.notification.appendChild(this.container)
 
     document.querySelector(".delete").addEventListener('click', () => {
-         document.querySelector(`.type-${type}`).style.display = 'none'
+         document.querySelector(`.notification`).style.display = 'none'
          
     })
 
