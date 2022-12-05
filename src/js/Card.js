@@ -44,7 +44,7 @@ export default class Card extends EventEmitter {
         price: this._price,
       });
     });
-    this.addListener(Card.events.ADD_TO_CART, function(args){
+    this.addListener(Card.events.ADD_TO_CART, (args) => {
       let n = new Notification();
       n.render(args)
     })
