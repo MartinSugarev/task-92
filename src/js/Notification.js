@@ -19,14 +19,14 @@ export default class Notification {
   }
 
   empty(){
-    this.notification.innerHTML = ''
+    this.container.remove()
   }
 
   render({type, price}) {
    
     const template = `
 <div class="${classNames('notification', `type-${type}`, {'is-danger': type === 'hawaiian' ? true : false})}">
-  <button class="delete">Close</button>
+  <button class="delete"></button>
   🍕 <span class="type">${type}</span> (<span class="price">${formatCurrency(price)}</span>) has been added to your order.
 </div>
     `;
@@ -35,8 +35,7 @@ export default class Notification {
     this.notification.appendChild(this.container)
 
     document.querySelector(".delete").addEventListener('click', () => {
-         document.querySelector(`.notification`).style.display = 'none'
-         
+      this.empty()
     })
 
   }
