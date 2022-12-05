@@ -34,9 +34,11 @@ export default class Notification {
     this.container.innerHTML = template;
     this.notification.appendChild(this.container)
 
-    document.querySelector(".delete").addEventListener('click', () => {
+
+    this.container.querySelector('.delete').addEventListener('click', () => {
       this.empty()
-    })
+    });
+    
 
   }
 }
